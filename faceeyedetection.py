@@ -9,7 +9,8 @@ while True:
     ret, frame = cap.read()
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, 1.3, 5)              #displaymultiscale will return the position of the face in terms of x,y,w,h where x and y are the starting point or the top left point of the face and w and h are the width and height of the face
+    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    #displaymultiscale will return the position of the face in terms of x,y,w,h where x and y are the starting point or the top left point of the face and w and h are the width and height of the face
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 5)
         roi_gray = gray[y:y+w, x:x+w]
